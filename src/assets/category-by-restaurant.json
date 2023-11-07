@@ -1,0 +1,21 @@
+{"message":"","result":true,
+"data":[
+    {"restaurantID":1,"price":0.0,"categoryName":"Burger","description":"Burger","restaurantName":"nayan127","availability":true,"photoUrl":"https://b.zmtcdn.com/data/dish_images/ccb7dc2ba2b054419f805da7f05704471634886169.png","openingHours":"11AM- 9PM","categoryId":15},
+    {"restaurantID":3,"price":0.0,"categoryName":"Burger","description":"Burger","restaurantName":"Swad sai","availability":true,"photoUrl":"https://b.zmtcdn.com/data/dish_images/ccb7dc2ba2b054419f805da7f05704471634886169.png","openingHours":"3","categoryId":15},
+    {"restaurantID":1,"price":0.0,"categoryName":"Sandwich","description":"Sandwich","restaurantName":"nayan127","availability":true,"photoUrl":"https://b.zmtcdn.com/data/o2_assets/fc641efbb73b10484257f295ef0b9b981634401116.png","openingHours":"11AM- 9PM","categoryId":18},
+    {"restaurantID":3,"price":0.0,"categoryName":"Sandwich","description":"Sandwich","restaurantName":"Swad sai","availability":true,"photoUrl":"https://b.zmtcdn.com/data/o2_assets/fc641efbb73b10484257f295ef0b9b981634401116.png","openingHours":"3","categoryId":18},
+    {"restaurantID":4,"price":0.0,"categoryName":"Sandwich","description":"Sandwich","restaurantName":"A........k","availability":true,"photoUrl":"https://b.zmtcdn.com/data/o2_assets/fc641efbb73b10484257f295ef0b9b981634401116.png","openingHours":"5","categoryId":18},
+    {"restaurantID":1,"price":0.0,"categoryName":"Dosa","description":"Dosa","restaurantName":"nayan127","availability":true,"photoUrl":"https://b.zmtcdn.com/data/o2_assets/8dc39742916ddc369ebeb91928391b931632716660.png","openingHours":"11AM- 9PM","categoryId":19},
+    {"restaurantID":1,"price":0.0,"categoryName":"Idli","description":"Idli","restaurantName":"nayan127","availability":true,"photoUrl":"https://b.zmtcdn.com/data/dish_photos/566/b8481e9df890a4e8887ece19e3f09566.jpg?output-format=webp","openingHours":"11AM- 9PM","categoryId":20},
+    {"restaurantID":3,"price":0.0,"categoryName":"Idli","description":"Idli","restaurantName":"Swad sai","availability":true,"photoUrl":"https://b.zmtcdn.com/data/dish_photos/566/b8481e9df890a4e8887ece19e3f09566.jpg?output-format=webp","openingHours":"3","categoryId":20},
+    {"restaurantID":4,"price":0.0,"categoryName":"Idli","description":"Idli","restaurantName":"A........k","availability":true,"photoUrl":"https://b.zmtcdn.com/data/dish_photos/566/b8481e9df890a4e8887ece19e3f09566.jpg?output-format=webp","openingHours":"5","categoryId":20},
+    {"restaurantID":1,"price":0.0,"categoryName":"Cake","description":"Cake","restaurantName":"nayan127","availability":true,"photoUrl":"https://b.zmtcdn.com/data/dish_images/d5ab931c8c239271de45e1c159af94311634805744.png","openingHours":"11AM- 9PM","categoryId":21},
+    {"restaurantID":3,"price":0.0,"categoryName":"Cake","description":"Cake","restaurantName":"Swad sai","availability":true,"photoUrl":"https://b.zmtcdn.com/data/dish_images/d5ab931c8c239271de45e1c159af94311634805744.png","openingHours":"3","categoryId":21},
+    {"restaurantID":4,"price":0.0,"categoryName":"Cake","description":"Cake","restaurantName":"A........k","availability":true,"photoUrl":"https://b.zmtcdn.com/data/dish_images/d5ab931c8c239271de45e1c159af94311634805744.png","openingHours":"5","categoryId":21}
+    ]}
+ 
+ 
+
+ 
+ 
+ 
