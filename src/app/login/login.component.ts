@@ -1,21 +1,42 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
+import { FormGroup,FormBuilder,Validators} from '@angular/forms'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-  loginObj: any = {
-    "userName": "",
-    "password": ""
-  }
+export class LoginComponent implements OnInit {
 
-  loginSuccess=false;
-  loginError=false;
-  onLogin(){
-    this.loginSuccess=false;
-    this.loginError=false;
-   
+
+
+  loginForm!:FormGroup;
+  isSubmitted=false;
+  constructor(private formBuilder:FormBuilder,private router:Router){
+  
   }
+  ngOnInit(): void {
+    this.loginForm=this.formBuilder.group({
+      email:['', [Validators.required,Validators.email]],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/)
+        ],
+      ],
+  
+    })
+  }
+   get fc(){
+      return this.loginForm.controls;
+  }
+  submit(){
+    this.isSubmitted=true;
+    if(this.loginForm.invalid) return;
+    this.router.navigate(['/']);
+  }
+ 
 }

@@ -2,19 +2,35 @@
     <div class="container">
         <div class="screen">
             <div class="screen__content">
-                <form class="login">
+                <form class="login" [formGroup]="loginForm" (ngSubmit)="submit()">
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
-                        <input type="text" name="userName" [(ngModel)]="loginObj.userName" class="login__input" placeholder="User name / Email">
+                        <input type="text" name="userName" class="login__input" placeholder="Email"
+                            formControlName="email">
+
+                        <div class="error-list" *ngIf="fc.email.errors && isSubmitted">
+
+                            <div *ngIf="fc.email.errors.required">Should not be empty</div>
+                            <div *ngIf="fc.email.errors.email" >Email is not valid</div>
+                        </div>
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-lock"></i>
-                        <input type="password" name="password" [(ngModel)]="loginObj.password" class="login__input" placeholder="Password">
+                        <input type="password" name="password" class="login__input" placeholder="Password" put
+                            type="password" name="Password" class="login__input" placeholder="Password"
+                            formControlName="password">
+                            <div class="error-list" *ngIf="fc.password.errors && isSubmitted">
+                                <div *ngIf="fc.password.errors.required">Password should not be empty</div>
+                                <div *ngIf="fc.password.errors.minlength" >Password should be at least 8 characters long</div>
+                                <div *ngIf="fc.password.errors.pattern">
+                                  Password should include at least 1 uppercase letter, 1 digit, and 1 special character
+                                </div>
+                              </div>
                     </div>
-                    <button (click)="onLogin()" class="button login__submit" >
+                    <button class="button login__submit">
                         <span class="button__text">Log In</span>
                         <i class="button__icon fas fa-chevron-right"></i>
-                    </button>				
+                    </button>
                 </form>
                 <div class="signup-link">
                     Not signed up? <a routerLink="/signup">Click here to sign up</a>
@@ -22,10 +38,10 @@
             </div>
             <div class="screen__background">
                 <span class="screen__background__shape screen__background__shape4"></span>
-                <span class="screen__background__shape screen__background__shape3"></span>		
+                <span class="screen__background__shape screen__background__shape3"></span>
                 <span class="screen__background__shape screen__background__shape2"></span>
                 <span class="screen__background__shape screen__background__shape1"></span>
-            </div>		
+            </div>
         </div>
     </div>
 </div>
