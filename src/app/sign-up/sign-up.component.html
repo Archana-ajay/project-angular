@@ -42,6 +42,15 @@
                             </div>
                           </div>
                     </div>
+                    <div class="login__field">
+                        <i class="login__icon fas fa-lock"></i>
+                        <input type="password" name="confirmPassword" class="login__input" placeholder="Confirm Password" formControlName="confirmPassword">
+                        <div class="error-list" *ngIf="fc.confirmPassword.errors && isSubmitted">
+                            <div *ngIf="fc.confirmPassword.errors.required">Please confirm the password</div>
+                            <div *ngIf="signupForm.hasError('passwordMismatch')">Passwords do not match</div>
+                        </div>
+                    </div>
+                    
                     <button  class="button login__submit" >
                         <p class="button__text">Sign Up</p>
 

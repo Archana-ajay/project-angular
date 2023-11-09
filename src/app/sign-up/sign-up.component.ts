@@ -27,12 +27,27 @@ ngOnInit(): void {
         Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/)
       ],
     ],
+    confirmPassword: ['']
 
 
+  },{
+    validator: this.passwordMatchValidator
   })
 }
 get fc(){
   return this.signupForm.controls;
+}
+passwordMatchValidator(formGroup: FormGroup) {
+  const password = formGroup.get('password')?.value;
+  const confirmPassword = formGroup.get('confirmPassword')?.value;
+
+  if (password !== confirmPassword) {
+    formGroup.get('confirmPassword')?.setErrors({ passwordMismatch: true });
+  } else {
+    formGroup.get('confirmPassword')?.setErrors(null);
+  }
+
+  return null;
 }
 submit(){
 this.isSubmitted=true;
