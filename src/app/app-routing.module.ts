@@ -4,7 +4,11 @@ import { LoginComponent } from './login/login.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ItemsComponent } from './items/items.component';
 import { CreateOrderComponent } from './create-order/create-order.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignupComponent } from './signup/signup.component';
+import { CartComponent } from './cart/cart.component';
+
+
+
 
 const routes: Routes = [
   {
@@ -16,7 +20,7 @@ const routes: Routes = [
   path:'login',component:LoginComponent
 },
 {
-  path:'signup',component:SignUpComponent
+  path:'signup',component:SignupComponent
 },
 {
   path:'foodCategory',component:CategoriesComponent
@@ -26,6 +30,9 @@ const routes: Routes = [
 },
 {
   path:'create-order',component:CreateOrderComponent
+},
+{
+  path:'cart',component:CartComponent
 }
 ];
 

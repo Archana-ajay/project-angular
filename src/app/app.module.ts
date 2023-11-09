@@ -9,7 +9,11 @@ import { ItemsComponent } from './items/items.component';
 import { CreateOrderComponent } from './create-order/create-order.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignupComponent } from './signup/signup.component';
+import { CartComponent } from './cart/cart.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -18,7 +22,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     CategoriesComponent,
     ItemsComponent,
     CreateOrderComponent,
-    SignUpComponent
+    SignupComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

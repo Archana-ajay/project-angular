@@ -11,7 +11,7 @@
                         <div class="col-7 text-end item-content-box">
                             <h4>{{item.description}}</h4>
                             <h6>{{item.price | currency}}</h6>
-                            <button class="btn btn-sm btn-success">Add</button>
+                            <button class="btn btn-sm btn-success" (click)="addItemToCart(item)">Add</button>
                         </div>
                     </div>
                     <p class="restaurant-text">{{item.restaurantName}}</p>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MasterService } from '../services/master.service';
 import { switchMap } from 'rxjs/operators';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-items',
@@ -16,11 +17,16 @@ import { switchMap } from 'rxjs/operators';
 export class ItemsComponent{
   items:any[]=[];
   filteredItems:any[]=[];
-constructor(private activate:ActivatedRoute,private master:MasterService){
-  this.activate.params.subscribe((res:any)=>{
-    debugger;
-    this.loadFoodItemsByCategory()
-  })
+  cartProducts: any[] = [];
+  isCartOpen: boolean = false;
+constructor(private activate:ActivatedRoute,private master:MasterService,private cartservice:CartService){
+  this.cartProducts = this.cartservice.cart;
+  //this.selectedCategory = this.categories[0];
+this.activate.params.subscribe((res:any)=>{
+  debugger;
+  this.loadFoodItemsByCategory()
+  
+})
 }
 // ngOnInit(): void {
 //   this.loadFoodItemsByCategory()
@@ -36,4 +42,11 @@ loadFoodItemsByCategory() {
     
   })
 }
+addItemToCart(product:any){
+      
+  this.cartservice.addToCart(product)
+  alert("Product added to cart")
+
+}
+
 }
