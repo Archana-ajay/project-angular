@@ -17,13 +17,5 @@ export class CartComponent implements OnInit {
   removeItemFromCart(index: number) {
     this.cartService.removeFromCart(index);
   }
-  // addToCart(item: any) {
-  //   const existingItem = this.cartService.getCartItem(item);
-  //   if (existingItem) {
-  //     existingItem.quantity += 1; // Increase quantity
-  //   } else {
-  //     item.quantity = 1; // Initialize quantity
-  //     this.cartService.addToCart(item);
-  //   }
-  // }
+ 
 }

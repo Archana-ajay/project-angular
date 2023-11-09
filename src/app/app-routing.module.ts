@@ -4,8 +4,9 @@ import { LoginComponent } from './login/login.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ItemsComponent } from './items/items.component';
 import { CreateOrderComponent } from './create-order/create-order.component';
-import { SignupComponent } from './signup/signup.component';
 import { CartComponent } from './cart/cart.component';
+import { SignupComponent } from './signup/signup.component';
+
 
 
 
@@ -16,11 +17,11 @@ const routes: Routes = [
     pathMatch: 'full',
     component:CategoriesComponent
   },
+  {
+    path:'signup',component:SignupComponent
+  },
 {
   path:'login',component:LoginComponent
-},
-{
-  path:'signup',component:SignupComponent
 },
 {
   path:'foodCategory',component:CategoriesComponent

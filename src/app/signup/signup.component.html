@@ -7,15 +7,15 @@
                         <i class="login__icon fas fa-user"></i>
                         <input type="text" name="username"  class="login__input" placeholder="Username" formControlName="username">
                         <div class="error-list" *ngIf="fc.username.errors && isSubmitted">
-                            <div *ngIf="fc.username.errors.required" >Username should not be empty</div>
+                            <div *ngIf="fc.username.errors.required" >Please provide username</div>
                         </div>
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-envelope"></i>
                         <input type="email" name="email"  class="login__input" placeholder="Email" formControlName="email">
                         <div class="error-list" *ngIf="fc.email.errors && isSubmitted">
-                            <div *ngIf="fc.email.errors.email" >Email is not valid</div>
-                             <div *ngIf="fc.email.errors.required" >Should not be empty</div> 
+                            <div *ngIf="fc.email.errors.email" >Please provide a valid email</div>
+                             <div *ngIf="fc.email.errors.required" >Please provide email address</div> 
                             <!-- </div> -->
                             
                         </div>
@@ -25,7 +25,7 @@
                         <input type="text" name="mobile"  class="login__input" placeholder="Mobile" formControlName="mobileNumber"
                         (input)="limitMobileNumberLength($event)">
                         <div class="error-list" *ngIf="fc.mobileNumber.errors && isSubmitted">
-                            <div *ngIf="fc.mobileNumber.errors.required" >Mobile Number should not be empty</div>
+                            <div *ngIf="fc.mobileNumber.errors.required" >Please provide mobile number</div>
                             <div *ngIf="fc.mobileNumber.errors.minlength" >Mobile Number should be atleast 10 characters</div>
                             <div *ngIf="fc.mobileNumber.errors.pattern" >Mobile Number should contain only numbers</div>
                           </div>
@@ -35,13 +35,22 @@
                         <i class="login__icon fas fa-lock"></i>
                         <input type="password" name="password"  class="login__input" placeholder="Password" formControlName="password">
                         <div class="error-list" *ngIf="fc.password.errors && isSubmitted">
-                            <div *ngIf="fc.password.errors.required">Password should not be empty</div>
+                            <div *ngIf="fc.password.errors.required">Please provide the password</div>
                             <div *ngIf="fc.password.errors.minlength" >Password should be at least 8 characters long</div>
                             <div *ngIf="fc.password.errors.pattern">
                               Password should include at least 1 uppercase letter, 1 digit, and 1 special character
                             </div>
                           </div>
                     </div>
+                    <div class="login__field">
+    <i class="login__icon fas fa-lock"></i>
+    <input type="password" name="confirmPassword" class="login__input" placeholder="Confirm Password" formControlName="confirmPassword">
+    <div class="error-list" *ngIf="fc.confirmPassword.errors && isSubmitted">
+        <div *ngIf="fc.confirmPassword.errors.required">Please confirm your password</div>
+        <div *ngIf="fc.confirmPassword.errors.mismatch">Passwords do not match</div>
+    </div>
+</div>
+                    
                     <button  class="button login__submit" >
                         <p class="button__text">Sign Up</p>
 

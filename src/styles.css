@@ -20,6 +20,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%; 
+    z-index: 100;
 }
 .card-food {
     box-shadow: 6px 11px 14px rgb(227 48 11 / 10%);
