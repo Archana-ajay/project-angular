@@ -13,6 +13,7 @@ export class SignupComponent {
   constructor(private formBuilder: FormBuilder, private router: Router) {
 
   }
+
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -32,15 +33,15 @@ export class SignupComponent {
         Validators.minLength(8),
         Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/)
       ]]
-
-
     }, {
       validator: this.passwordMatchValidator('password', 'confirmPassword')
     })
   }
+
   get fc() {
     return this.signupForm.controls;
   }
+
   passwordMatchValidator(passwordString: string, confirmPasswordString: string) {
     const validators = (form: AbstractControl) => {
       const password = form.get(passwordString)
@@ -57,15 +58,14 @@ export class SignupComponent {
     } 
     }
     return validators
-
   }
+
   submit() {
     this.isSubmitted = true;
     if (this.signupForm.invalid) return;
-    this.router.navigate(['login']);
-
-
+    this.router.navigate(['/login']);
   }
+  
   limitMobileNumberLength(event: Event): void {
     const input = event.target as HTMLInputElement;
     const inputValue = input.value;

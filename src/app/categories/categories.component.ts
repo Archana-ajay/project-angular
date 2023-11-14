@@ -12,14 +12,17 @@ export class CategoriesComponent implements OnInit {
 constructor(private masterSrv:MasterService,private router:Router){
 
 }
+
 ngOnInit(): void {
   this.loadAllFoodCategories()
 }
+
 loadAllFoodCategories(){
   this.masterSrv.getAllFoodCategory().subscribe((res:any)=>{
     this.categoryList=res.data
   })
 }
+
 navigate(item:string){
 this.router.navigate(['/restaurant-items',item])
 }

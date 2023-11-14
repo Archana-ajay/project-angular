@@ -8,17 +8,8 @@ export class CartService {
   cart: any[] = [];
 
  
- 
   constructor(private http:HttpClient) { }
-  getCartItem(item: any): any {
-    return this.cart.find((cartItem) => cartItem.id === item.id);
-  }
 
-  
-
-  getAllProducts(){
-        return this.http.get("assets/category.json");
-  }
   
   getCart(): any[] {
     return this.cart;

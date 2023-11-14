@@ -10,9 +10,6 @@ import { CartService } from '../services/cart.service';
 })
 
 
-
-
-
 export class ItemsComponent {
   items: any[] = [];
   filteredItems: any[] = [];
@@ -21,7 +18,6 @@ export class ItemsComponent {
 
   constructor(private activate: ActivatedRoute, private master: MasterService, private cartservice: CartService) {
     this.cartProducts = this.cartservice.cart;
-   
     this.activate.params.subscribe((res: any) => {
       this.loadFoodItemsByCategory()
 
