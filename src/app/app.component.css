@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container > *{
+    flex-grow: none;
+}
+
+.collapse .navbar-collapse .button{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.button {
+    width: 15rem;
+}
+
+.flex-gap {
+    gap: 1rem;
+}
+
+.custom-button {
+    background-color: #5D54A4;
+    color: white;
+}

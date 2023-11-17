@@ -8,10 +8,14 @@
                         <input type="text" name="userName" class="login__input" placeholder="Email"
                             formControlName="email">
 
-                        <div class="error-list" *ngIf="fc.email.errors && isSubmitted">
+                        <div class="error-list" *ngIf="fc.email.errors && (fc.email.touched || isSubmitted)">
 
                             <div *ngIf="fc.email.errors.required">Please provide email address</div>
                             <div *ngIf="fc.email.errors.email" >Please provide a valid email address</div>
+                            <div *ngIf="fc.email.errors.minlength" >Email should be at least 10
+                                characters long</div>
+                            <div *ngIf="fc.email.errors.maxlength" >Email should be atmost 20
+                                    characters long</div>
                         </div>
                     </div>
                     <div class="login__field">
@@ -19,7 +23,7 @@
                         <input type="password" name="password" class="login__input" placeholder="Password" put
                             type="password" name="Password" class="login__input" placeholder="Password"
                             formControlName="password">
-                            <div class="error-list" *ngIf="fc.password.errors && isSubmitted">
+                            <div class="error-list" *ngIf="fc.password.errors && (fc.password.touched || isSubmitted)">
                                 <div *ngIf="fc.password.errors.required">Please provide the password</div>
                                 <div *ngIf="fc.password.errors.minlength" >Password should be at least 8 characters long</div>
                                 <div *ngIf="fc.password.errors.pattern">

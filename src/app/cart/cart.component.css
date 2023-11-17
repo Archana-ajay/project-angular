@@ -1,12 +1,28 @@
 .food-item {
     height: 100px;
 }
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
 .card{
     border: 1px solid #5D54A4;
     border-radius: 1rem;
     box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.34);
 -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.34);
 -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.34);
+}
+
+.flex-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-img-top {
+    width: 5rem;
 }
 
 .item-content-box {
@@ -31,3 +47,24 @@
     margin-bottom: 0;
     font-weight:400;
 }
+
+.quantity-controls {
+    display: flex;
+    justify-content: space-around;
+}
+
+.quantity-controls>div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container {
+    margin-bottom: 6rem;
+}
+
+.custom-button {
+    background-color: #5D54A4;
+    color: white;
+}
+

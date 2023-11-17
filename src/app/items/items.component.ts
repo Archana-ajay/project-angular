@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MasterService } from '../services/master.service';
 import { CartService } from '../services/cart.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-items',
@@ -13,11 +14,12 @@ import { CartService } from '../services/cart.service';
 export class ItemsComponent {
   items: any[] = [];
   filteredItems: any[] = [];
-  cartProducts: any[] = [];
-  isCartOpen: boolean = false;
 
-  constructor(private activate: ActivatedRoute, private master: MasterService, private cartservice: CartService) {
-    this.cartProducts = this.cartservice.cart;
+  cartObj: any[] = [];
+
+
+  constructor(private router:Router,private activate: ActivatedRoute, private master: MasterService,  private authService: AuthService,private cartService: CartService) {
+   // this.cartProducts = this.cartservice.cart;
     this.activate.params.subscribe((res: any) => {
       this.loadFoodItemsByCategory()
 
@@ -32,8 +34,16 @@ export class ItemsComponent {
     })
   }
 
-  addItemToCart(product: any) {
-    this.cartservice.addToCart(product)
-    alert("Added to cart")
+  addItemToCart(restaurant: any) {
+    this.cartService.addToCart(restaurant._id, 1).subscribe({
+      next: (res) => {
+        console.log(res)
+      alert("Item added to cart")
+      },
+      error: (err) => {
+        alert('Unable to add. Please login')
+        this.router.navigate(['/login']);
+      }
+    })
   }
 }

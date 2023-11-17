@@ -203,3 +203,32 @@
 	text-align: center;
 	width: 100%;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.password-field {
+    display: flex;
+    align-items: center;
+  }
+ 
+  .password-field> button {
+    height: 1.9rem;
+    font-size: 0.7rem;
+    padding: 6px 8px;
+    background-color: #e6e6ee;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	border: 1px solid gray;
+	border-radius: 1rem;
+  }
+ 
+  .password-field> button p{
+    color: rgb(15, 13, 13);
+    margin: 0;
+  }

@@ -5,28 +5,37 @@
                 <form class="signup" [formGroup]="signupForm" (ngSubmit)="submit()">
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
-                        <input type="text" name="username" class="login__input" placeholder="Username"
-                            formControlName="username">
-                        <div class="error-list" *ngIf="fc.username.errors && isSubmitted">
-                            <div *ngIf="fc.username.errors.required">Please provide username</div>
+                        <input type="text"  (keypress)="checkInput($event) "name="name" class="login__input" placeholder="Name *"
+                        formControlName="name" (input)="limitUserNameLength($event)">
                         </div>
+                    <div class="error-list" *ngIf="fc.name.errors && (fc.name.touched || isSubmitted)">
+                        <div *ngIf="fc.name.errors.required" >name should not be empty
+                        </div>
+                        <div *ngIf="fc.name.errors.minlength">name should be
+                            atleast 5 characters</div>
+                        <div *ngIf="fc.name.errors.maxlength">name should be
+                            atmost 15 characters</div>
                     </div>
 
                     <div class="login__field">
                         <i class="login__icon fas fa-envelope"></i>
-                        <input type="email" name="email" class="login__input" placeholder="Email"
+                        <input type="email" name="email" class="login__input" placeholder="Email *"
                             formControlName="email">
-                        <div class="error-list" *ngIf="fc.email.errors && isSubmitted">
+                        <div class="error-list" *ngIf="fc.email.errors &&(fc.email.touched || isSubmitted)">
                             <div *ngIf="fc.email.errors.email">Please provide a valid email</div>
                             <div *ngIf="fc.email.errors.required">Please provide email address</div>
+                            <div *ngIf="fc.email.errors.minlength" >Email should be at least 10
+                                characters long</div>
+                            <div *ngIf="fc.email.errors.maxlength" >Email should be atmost 20
+                                    characters long</div>
                         </div>
                     </div>
 
                     <div class="login__field">
                         <i class="login__icon fas fa-mobile-alt"></i>
-                        <input type="text" name="mobile" class="login__input" placeholder="Mobile"
+                        <input type="number" name="mobile" class="login__input" placeholder="Mobile *"
                             formControlName="mobileNumber" (input)="limitMobileNumberLength($event)">
-                        <div class="error-list" *ngIf="fc.mobileNumber.errors && isSubmitted">
+                        <div class="error-list" *ngIf="fc.mobileNumber.errors && (fc.mobileNumber.touched || isSubmitted)">
                             <div *ngIf="fc.mobileNumber.errors.required">Please provide mobile number</div>
                             <div *ngIf="fc.mobileNumber.errors.minlength">Mobile Number should be atleast 10 characters
                             </div>
@@ -36,9 +45,12 @@
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-lock"></i>
-                        <input type="password" name="password" class="login__input" placeholder="Password"
-                            formControlName="password">
-                        <div class="error-list" *ngIf="fc.password.errors && isSubmitted">
+                        <div class="password-field">
+                    <input [type]="passwordToggler ? 'password' : 'text'" name="password" class="login__input" placeholder="Password *"
+                    formControlName="password" >
+                    <button type="button" (click)="togglePassword()"><p>Show</p></button>
+                </div>
+                        <div class="error-list" *ngIf="fc.password.errors && (fc.password.touched || isSubmitted)">
                             <div *ngIf="fc.password.errors.required">Please provide the password</div>
                             <div *ngIf="fc.password.errors.minlength">Password should be at least 8 characters long
                             </div>
@@ -51,8 +63,8 @@
                     <div class="login__field">
                         <i class="login__icon fas fa-lock"></i>
                         <input type="password" name="confirmPassword" class="login__input"
-                            placeholder="Confirm Password" formControlName="confirmPassword">
-                        <div class="error-list" *ngIf="fc.confirmPassword.errors && isSubmitted">
+                            placeholder="Confirm Password *" formControlName="confirmPassword">
+                        <div class="error-list" *ngIf="fc.confirmPassword.errors && (fc.confirmPassword.touched || isSubmitted)">
                             <div *ngIf="fc.confirmPassword.errors.required">Please confirm your password</div>
                             <div *ngIf="fc.confirmPassword.errors.mismatch">Passwords do not match</div>
                         </div>
