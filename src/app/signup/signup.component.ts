@@ -96,6 +96,13 @@ export class SignupComponent {
       input.value = inputValue.slice(0, 12);
     }
   }
+  limitEmailLength(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const inputValue = input.value;
+    if (inputValue.length > 30) {
+      input.value = inputValue.slice(0, 30);
+    }
+  }
   
   limitMobileNumberLength(event: Event): void {
     const input = event.target as HTMLInputElement;

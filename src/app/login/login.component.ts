@@ -12,6 +12,7 @@ import { UserService } from '../services/user.service';
 export class LoginComponent implements OnInit {
   loginForm!:FormGroup;
   isSubmitted=false;
+  passwordToggler: boolean = true;
 
   constructor(private formBuilder:FormBuilder,private router:Router, private authService: AuthService, private userService: UserService){
   
@@ -34,6 +35,16 @@ export class LoginComponent implements OnInit {
 
    get fc(){
       return this.loginForm.controls;
+  }
+  limitEmailLength(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const inputValue = input.value;
+    if (inputValue.length > 30) {
+      input.value = inputValue.slice(0, 30);
+    }
+  }
+  togglePassword() {
+    this.passwordToggler = !this.passwordToggler
   }
 
   submit() {
