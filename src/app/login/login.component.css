@@ -167,17 +167,17 @@
 
 .signup-link {
 	background-color: rgba(255, 255, 255, 0.548);
-    text-align: center; /* Center the text */
+    text-align: center; 
 }
 
 .signup-link a {
-    color: #1a303b; /* Set the link color */
-    text-decoration: none; /* Remove underline from the link */
-    font-weight: bold; /* Make the text bold */
+    color: #1a303b; 
+    text-decoration: none;
+    font-weight: bold; 
 }
 
 .signup-link a:hover {
-    text-decoration: underline; /* Underline the link on hover */
+    text-decoration: underline;
 }
 
 .button__text{

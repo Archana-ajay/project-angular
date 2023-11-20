@@ -19,7 +19,6 @@ export class ItemsComponent {
 
 
   constructor(private router:Router,private activate: ActivatedRoute, private master: MasterService,  private authService: AuthService,private cartService: CartService) {
-   // this.cartProducts = this.cartservice.cart;
     this.activate.params.subscribe((res: any) => {
       this.loadFoodItemsByCategory()
 

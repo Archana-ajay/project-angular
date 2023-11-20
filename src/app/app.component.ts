@@ -17,9 +17,9 @@ export class AppComponent {
   }
   toggleLogin() {
     if (this.isLoggedIn) {
-      // Perform logout logic
+      // logout
       this.authService.logout();
-      // Redirect to the login page or any other page
+      // Redirect to the login page 
       this.router.navigate(['/login']);
     } else {
       // Redirect to the login page

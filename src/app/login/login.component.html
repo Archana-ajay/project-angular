@@ -5,7 +5,7 @@
                 <form class="login" [formGroup]="loginForm" (ngSubmit)="submit()">
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
-                        <input type="text" name="userName" class="login__input" placeholder="Email"
+                        <input type="text" name="userName" class="login__input" placeholder="Email *"
                             formControlName="email" (input)="limitEmailLength($event)">
 
                         <div class="error-list" *ngIf="fc.email.errors && (fc.email.touched || isSubmitted)">

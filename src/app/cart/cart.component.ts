@@ -1,6 +1,6 @@
-import { Component ,OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import { CartService } from '../services/cart.service';
-import { UserService } from '../services/user.service';
+
 
 @Component({
   selector: 'app-cart',
@@ -38,7 +38,7 @@ export class CartComponent {
         }
       });
     } else {
-      // Remove the item if quantity becomes zero
+     
       this.removeItem(item, this.cartProducts.indexOf(item));
     }
   }
