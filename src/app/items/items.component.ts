@@ -34,7 +34,7 @@ export class ItemsComponent {
   }
 
   addItemToCart(restaurant: any) {
-    this.cartService.addToCart(restaurant._id, 1).subscribe({
+    this.cartService.addToCart(restaurant.id, 1).subscribe({
       next: (res) => {
         console.log(res)
       alert("Item added to cart")

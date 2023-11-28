@@ -10,6 +10,7 @@ import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { OrderComponent } from './order/order.component';
 
 
 
@@ -21,7 +22,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     CategoriesComponent,
     ItemsComponent,
     CartComponent,
-    SignupComponent
+    SignupComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .container > *{
@@ -24,4 +24,11 @@
 .custom-button {
     background-color: #5D54A4;
     color: white;
+}
+
+.foot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
 }

@@ -5,6 +5,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { ItemsComponent } from './items/items.component';
 import { CartComponent } from './cart/cart.component';
 import { SignupComponent } from './signup/signup.component';
+import { OrderComponent } from './order/order.component';
 
 
 
@@ -30,6 +31,9 @@ const routes: Routes = [
 },
 {
   path:'cart',component:CartComponent
+},
+{
+  path:'order',component:OrderComponent
 }
 ];
 

@@ -1,0 +1,27 @@
+.custom-button {
+    background-color: #5D54A4;
+    color: white;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.order-item {
+    border: 1px solid gray;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    margin-bottom: 5px;
+}
+
+.orders:nth-child(1) {
+    margin-top: 1rem;
+}
+
+.orders:last-child {
+    margin-bottom: 3rem;
+}

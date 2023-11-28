@@ -1,19 +1,22 @@
 <div class="container mt-5">
     <h1 class="text-center mb-4">Shopping Cart</h1>
+    <div class="d-flex justify-content-evenly mt-2">
+      <a routerLink="/order"> <button class="btn btn-danger rounded-0 px-3" *ngIf="cartProducts.length != 0" (click)="orderNow()">Order Now</button></a>
+  </div>
     <div class="row">
       <div class="col-12" *ngFor="let item of cartProducts; let i = index">
         <div class="card">
           <div class="card-body">
             <div class="flex-box">
               <div class="col-6">
-                <img [src]="item.restaurantID.photoUrl" class="card-img-top" alt="Pav Bhaji">
+                <img [src]="item.Restaurant.photoUrl" class="card-img-top" alt="Pav Bhaji">
               </div>
               <div class="col-6 text-end item-content-box">
-                <h4>{{ item.restaurantID.description }}</h4>
-                <h6>{{ item.restaurantID.price | currency }}</h6>
+                <h4>{{ item.Restaurant.description }}</h4>
+                <h6>{{ item.Restaurant.price | currency }}</h6>
               </div>
             </div>
-            <p class="restaurant-text">{{ item.restaurantID.restaurantName }}</p>
+            <p class="restaurant-text">{{ item.Restaurant.restaurantName }}</p>
             <div class="quantity-controls">
               <div>
               <button type="button" class="btn custom-button" (click)="decrementQuantity(item)">-</button>
@@ -26,7 +29,7 @@
         </div>
       </div>
     </div>
-    <div class="container mt-5" *ngIf="cartProducts.length === 0">
+    <div class="container mt-5" *ngIf="cartProducts.length == 0">
       <h4 class="text-center mb-4">Your Cart is Empty</h4></div>
   </div>
   

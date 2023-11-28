@@ -11,6 +11,9 @@
         <li class="nav-item" *ngIf="isLoggedIn">
           <a class="nav-link" routerLink="cart">Cart</a>
         </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" routerLink="order">Orders</a>
+        </li>
         <li class="nav-item dropdown">
           <button *ngIf="!isLoggedIn" type="button" class="btn custom-button" (click)="toggleLogin()">Login</button>
           <button *ngIf="isLoggedIn" type="button" class="btn custom-button" (click)="toggleLogin()">Logout</button>
@@ -20,7 +23,7 @@
   </div>
 </nav>
 <router-outlet></router-outlet>
-<footer class="footer py-3 mt-5">
+<footer class="footer foot-container">
   <div class="container text-center">
       <p>&copy; 2023 FoodApp Item List. All rights reserved.</p>
   </div>
