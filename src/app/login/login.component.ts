@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
   if (this.loginForm.invalid) return;
 
   const { email, password } = this.loginForm.value;
-  console.log('user details', email, password)
+ 
 
   this.userService.loginUser(email, password)
     .then((data) => {
@@ -63,8 +63,7 @@ export class LoginComponent implements OnInit {
       } 
     })
     .catch((error) => {
-      console.error('Error in login', error);
-      alert('Invalid Credentials')
+      alert(error.error.msg)
     });
 }
 }

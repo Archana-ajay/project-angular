@@ -9,12 +9,14 @@ import { OrderService } from '../services/order.service';
 
 export class OrderComponent implements OnInit{
   orders: any[] = [];
+  loading: boolean = true;
+ 
  
   constructor(private orderService: OrderService) {
-    this.orderService.getUserOrders().subscribe((res)=>{
-      console.log('order from db',res)
+    // this.orderService.getUserOrders().subscribe((res)=>{
+    //   console.log('order from db',res)
      
-    })
+    // })
   }
  
   ngOnInit(): void {
@@ -24,8 +26,9 @@ export class OrderComponent implements OnInit{
  
   loadOrders(): void {
     this.orderService.getUserOrders().subscribe((result: any) => {
-    
-      this.orders = result.orders
+      console.log(result.orders)
+      this.orders = result.orders;
+      this.loading = false;
     })
        
   }

@@ -8,6 +8,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 5rem;
+}
+
+.orders {
+    width : 60%;
 }
 
 .order-item {

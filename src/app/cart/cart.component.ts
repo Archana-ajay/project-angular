@@ -11,13 +11,15 @@ import { Router } from '@angular/router';
 })
 export class CartComponent {
   cartProducts: any[] = [];
-  nullStr = 'Empty'
+  nullStr = 'Empty';
+  loading: boolean = true;
 
   constructor(
     private cartService: CartService,private orderService:OrderService,private router:Router) {
     this.cartService.getCart().subscribe((res) => {
       console.log('cart from db',res)
       this.cartProducts = res.data
+      this.loading = false;
     });
   }
 
