@@ -11,6 +11,7 @@ import { CartComponent } from './cart/cart.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { OrderComponent } from './order/order.component';
+import { AddressComponent } from './address/address.component';
 
 
 
@@ -23,7 +24,8 @@ import { OrderComponent } from './order/order.component';
     ItemsComponent,
     CartComponent,
     SignupComponent,
-    OrderComponent
+    OrderComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,

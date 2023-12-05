@@ -6,6 +6,7 @@ import { ItemsComponent } from './items/items.component';
 import { CartComponent } from './cart/cart.component';
 import { SignupComponent } from './signup/signup.component';
 import { OrderComponent } from './order/order.component';
+import { AddressComponent } from './address/address.component';
 
 
 
@@ -34,6 +35,9 @@ const routes: Routes = [
 },
 {
   path:'order',component:OrderComponent
+},
+{
+  path:'address',component:AddressComponent
 }
 ];
 

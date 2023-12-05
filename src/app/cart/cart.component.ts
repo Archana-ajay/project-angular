@@ -1,3 +1,4 @@
+import { CartDataRes } from './../interfaces/interfaces';
 import { Component } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { OrderService } from '../services/order.service';
@@ -23,7 +24,7 @@ export class CartComponent {
     });
   }
 
-  incrementQuantity(item: any) {
+  incrementQuantity(item: CartDataRes) {
     item.quantity = (item.quantity || 1) + 1;
     this.cartService.addToCart(item.Restaurant.id, 1).subscribe({
       next:() => {
@@ -33,7 +34,7 @@ export class CartComponent {
     })
   }
 
-  decrementQuantity(item: any) {
+  decrementQuantity(item: CartDataRes) {
     if (item.quantity && item.quantity > 1) {
       item.quantity -= 1;
       this.cartService.addToCart(item.Restaurant.id, -1).subscribe({
@@ -47,7 +48,7 @@ export class CartComponent {
     }
   }
  
-  removeItem(item: any, index: number) {
+  removeItem(item: CartDataRes, index: number) {
     this.cartProducts.splice(index, 1);
     this.cartService.removeFromCart(item.Restaurant.id).subscribe({
       next: () => {
@@ -59,8 +60,8 @@ export class CartComponent {
   orderNow() {
     this.orderService.placeOrder(this.cartProducts).subscribe({
       next: (order) => {
-        alert('Order placed successfully:');
-        this.router.navigate(['/order'])
+       // alert('Order placed successfully:');
+        this.router.navigate(['/address'])
       },
       error: (error) => {
         console.error('Error placing order:', error);

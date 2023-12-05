@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="delivery-address">
+        <h2>Add Delivery Address</h2>
+
+        <form [formGroup]="addressForm" (ngSubmit)="submitAddress()">
+            <div class="login__field">
+                <i class="login__icon fas fa-map-marker-alt"></i>
+                <input type="text" name="address" class="login__input" placeholder="Address *"
+                    formControlName="address" (input)="limitLength($event)">
+                <div class="error-list"
+                    *ngIf="fc.address.errors && (fc.address.touched || isSubmitted)">
+                    <div *ngIf="fc.address.errors.required">Please provide your address</div>
+                    <div *ngIf="fc.address.errors.minlength">Address should be
+                        atleast 5 characters</div>
+                    <div *ngIf="fc.address.errors.maxlength">Adrress should be
+                        atmost 25 characters</div>
+                </div>
+            </div>
+
+            <div class="login__field">
+                <i class="login__icon fas fa-city"></i>
+                <input type="text" name="city" class="login__input" placeholder="City *"
+                    formControlName="city" (keypress)="checkInput($event) " (input)="limitLength($event)">
+                <div class="error-list"
+                    *ngIf="fc.city.errors && (fc.city.touched || isSubmitted)">
+                    <div *ngIf="fc.city.errors.required">Please provide your city</div>
+                    <div *ngIf="fc.city.errors.minlength">City should be
+                        atleast 5 characters</div>
+                    <div *ngIf="fc.city.errors.maxlength">City should be
+                        atmost 25 characters</div>
+                </div>
+            </div>
+
+            <div class="login__field">
+                <i class="login__icon fas fa-flag"></i>
+                <input type="text" name="state" class="login__input" placeholder="State *"
+                    formControlName="state" (keypress)="checkInput($event) "(input)="limitLength($event)">
+                <div class="error-list"
+                    *ngIf="fc.state.errors && (fc.state.touched || isSubmitted)">
+                    <div *ngIf="fc.state.errors.required">Please provide your state</div>
+                    <div *ngIf="fc.state.errors.minlength">State should be
+                        atleast 5 characters</div>
+                    <div *ngIf="fc.state.errors.maxlength">State should be
+                        atmost 25 characters</div>
+                </div>
+                </div>
+          
+
+            <div class="login__field">
+                <i class="login__icon fas fa-mail-bulk"></i>
+                <input type="number" name="postalCode" class="login__input" placeholder="Postal Code *"
+                    formControlName="postalCode" (input)="limitPostalLength($event)">
+                <div class="error-list"
+                    *ngIf="fc.postalCode.errors && (fc.postalCode.touched || isSubmitted)">
+                    <div *ngIf="fc.postalCode.errors.required">Please provide your postal code</div>
+                </div>
+            </div>
+
+            <div class="login__field">
+                <i class="login__icon fas fa-globe"></i>
+                <input type="text" name="country" class="login__input" placeholder="Country *"
+                    formControlName="country"(keypress)="checkInput($event) " (input)="limitLength($event)">
+                <div class="error-list"
+                    *ngIf="fc.country.errors && (fc.country.touched || isSubmitted)">
+                    <div *ngIf="fc.country.errors.required">Please provide your country</div>
+                    <div *ngIf="fc.country.errors.minlength">Country should be
+                        atleast 5 characters</div>
+                    <div *ngIf="fc.country.errors.maxlength">Country should be
+                        atmost 25 characters</div>
+                    
+                </div>
+            </div>
+
+            <button class="button login__submit" type="submit">
+                <p class="button__text">{{ existingAddress ? 'Save' : 'Add' }} Address</p>
+              </button>
+        </form>
+
+       
+        <div class="back-link">
+            <a routerLink="/">Back to Home</a>
+        </div>
+    </div>
+</div>
+
