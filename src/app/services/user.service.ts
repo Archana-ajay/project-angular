@@ -8,7 +8,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  registerUser(user: any): any {
+  registerUser(user: object): any {
     return this.http.post('http://localhost:3000/api/v1/signup', user)
   }
 
@@ -32,7 +32,7 @@ export class UserService {
     return JSON.parse(localStorage.getItem('currentUser') || '{}');
   }
 
-  setCurrentUser(user: any): void {
+  setCurrentUser(user: object): void {
     localStorage.setItem('currentUser', JSON.stringify(user))
   }
 

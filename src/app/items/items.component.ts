@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MasterService } from '../services/master.service';
 import { CartService } from '../services/cart.service';
 import { AuthService } from '../services/auth.service';
+import { RestaurantData } from '../interfaces/interfaces';
 
 @Component({
   selector: 'app-items',
@@ -14,7 +15,6 @@ import { AuthService } from '../services/auth.service';
 export class ItemsComponent {
   items: any[] = [];
   filteredItems: any[] = [];
-
   cartObj: any[] = [];
 
 
@@ -33,7 +33,7 @@ export class ItemsComponent {
     })
   }
 
-  addItemToCart(restaurant: any) {
+  addItemToCart(restaurant: RestaurantData) {
     this.cartService.addToCart(restaurant.id, 1).subscribe({
       next: (res) => {
         console.log(res)

@@ -22,3 +22,6 @@ export interface RestaurantData {
     createdAt: string,
     updatedAt: string
 }
+
+
+

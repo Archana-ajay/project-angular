@@ -12,7 +12,7 @@ export class AddressService {
   constructor(private http: HttpClient) {}
 
   // Create a new address
-  postAddress(addressData: any): Observable<any> {
+  postAddress(addressData: object): Observable<any> {
     return this.http.post(`${this.apiUrl}/address`, addressData);
   }
 
@@ -22,7 +22,7 @@ export class AddressService {
   }
 
   // Update an existing address
-  updateAddress(addressId: string, addressData: any): Observable<any> {
+  updateAddress(addressId: string, addressData: object): Observable<any> {
     return this.http.patch(`${this.apiUrl}/address/${addressId}`, addressData);
   }
 }
